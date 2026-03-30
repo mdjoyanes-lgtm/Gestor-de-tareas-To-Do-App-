@@ -48,3 +48,22 @@ calendarDays.appendChild(dayElement)
 }
 
 renderCalendar()
+
+// BOTON DE + ADD CMORE EN MY CATEGORIEES
+const addCategoryBtn = document.querySelector(".add-category-btn")
+const categoryList = document.getElementById("categoryList")
+
+addCategoryBtn.addEventListener("click", () => {
+
+const text = prompt("Escribe una nueva categoría")
+
+if(text){
+
+const newCategory = document.createElement("p")
+newCategory.textContent = text
+
+categoryList.appendChild(newCategory)
+
+}
+
+})
