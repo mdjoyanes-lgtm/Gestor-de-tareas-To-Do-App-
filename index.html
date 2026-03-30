@@ -2,165 +2,195 @@
 <html lang="es">
 
 <head>
-<meta charset="UTF-8">
-<title>Task Dashboard</title>
+    <meta charset="UTF-8">
+    <title>Task Dashboard</title>
 
-<link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
-<div class="app">
+    <div class="app">
 
-    <!-- SIDEBAR -->
+        <!-- SIDEBAR -->
 
-    <aside class="sidebar">
+        <aside class="sidebar">
 
-        <h2 class="logo">Organizo</h2>
+            <h2 class="logo">Organizo</h2>
 
-        <nav>
+            <nav>
 
-            <ul>
+                <ul>
 
-                <li class="active">Dashboard</li>
-                <li>My tasks</li>
-                <li>Notifications</li>
-
-            </ul>
-
-        </nav>
-
-        <div class="sidebar-bottom">
-
-            <p>Settings</p>
-            <p>Log out</p>
-
-        </div>
-
-    </aside>
-
-
-    <!-- MAIN CONTENT -->
-
-    <main class="main">
-
-        <!-- HEADER -->
-
-        <header class="topbar">
-
-            <input type="text" placeholder="Search">
-
-            <button class="new-task-btn">
-                + New task
-            </button>
-
-        </header>
-
-
-        <!-- DASHBOARD GRID -->
-
-        <section class="dashboard">
-
-            <!-- CALENDAR -->
-
-            <div class="card calendar">
-
-                <div class="calendar-header">
-
-                    <button id="prevMonth">◀</button>
-
-                    <h3 id="monthYear">March 2026</h3>
-
-                    <button id="nextMonth">▶</button>
-
-                </div>
-
-                <div class="weekdays">
-
-                    <div>Mo</div>
-                    <div>Tu</div>
-                    <div>We</div>
-                    <div>Th</div>
-                    <div>Fr</div>
-                    <div>Sa</div>
-                    <div>Su</div>
-
-                </div>
-
-                <div id="calendarDays">
-
-                    <!-- JS generará los días -->
-
-                </div>
-
-            </div>
-
-
-            <!-- TASK LIST -->
-
-            <div class="card tasks">
-
-                <h3>My tasks</h3>
-
-                <ul id="taskList">
-
-                    <li>
-                        Finish project
-                    </li>
-
-                    <li>
-                        Study JavaScript
-                    </li>
+                    <li class="active">Dashboard</li>
+                    <li>My tasks</li>
+                    <li>Notifications</li>
 
                 </ul>
 
-            </div>
+            </nav>
 
+            <div class="sidebar-bottom">
 
-            <!-- COMMENTS -->
-
-            <div class="card comments">
-
-                <h3>New comments</h3>
-
-                <p>Market research</p>
-                <p>Check data updates</p>
+                <p>Settings</p>
+                <p>Log out</p>
 
             </div>
 
-
-            <!-- CATEGORIES -->
-
-            <div class="card categories">
-
-                <h3>My categories</h3>
-
-                <p>Work</p>
-                <p>Family</p>
-                <p>Freelance</p>
-
-            </div>
+        </aside>
 
 
-            <!-- TRACKING -->
+        <!-- MAIN CONTENT -->
 
-            <div class="card tracking">
+        <main class="main">
 
-                <h3>My tracking</h3>
+            <!-- HEADER -->
 
-                <p>Create wireframe</p>
-                <p>Design dashboard</p>
+            <header class="topbar">
 
-            </div>
+                <input type="text" placeholder="Search">
 
-        </section>
+                <div class="topbar-actions">
 
-    </main>
+                    <button class="new-task-btn">
+                        + New task
+                    </button>
 
-</div>
+                    <i class="fa-solid fa-envelope email-icon"></i>
 
-<script src="script.js"></script>
+                </div>
+
+            </header>
+
+
+            <!-- DASHBOARD GRID -->
+
+            <section class="dashboard">
+
+                <!-- CALENDAR -->
+
+                <div class="card calendar">
+
+                    <div class="calendar-header">
+
+                        <button id="prevMonth">◀</button>
+
+                        <h3 id="monthYear">March 2026</h3>
+
+                        <button id="nextMonth">▶</button>
+
+                    </div>
+
+                    <div class="weekdays">
+
+                        <div>Mo</div>
+                        <div>Tu</div>
+                        <div>We</div>
+                        <div>Th</div>
+                        <div>Fr</div>
+                        <div>Sa</div>
+                        <div>Su</div>
+
+                    </div>
+
+                    <div id="calendarDays">
+
+                        <!-- JS generará los días -->
+
+                    </div>
+
+                </div>
+
+
+                <!-- TASK LIST -->
+
+                <div class="card tasks">
+
+                    <h3>My tasks</h3>
+
+                    <ul id="taskList">
+
+                        <li>
+                            Finish project
+                        </li>
+
+                        <li>
+                            Study JavaScript
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- COMMENTS -->
+
+                <div class="card comments">
+
+                    <h3>New comments</h3>
+
+                    <div id="commentList">
+
+                        <p>Market research</p>
+                        <p>Check data updates</p>
+
+                    </div>
+
+                    <button class="add-comment-btn">
+                        + Add
+                    </button>
+
+                </div>
+
+                <div class="card add-widget">
+
+                    <div class="plus">+</div>
+
+                    <p>Añadir widget</p>
+
+                </div>
+
+
+                <!-- CATEGORIES -->
+
+                <div class="card categories">
+
+                    <h3>My categories</h3>
+
+                    <div id="categoryList">
+
+                        <p>Work</p>
+                        <p>Family</p>
+                        <p>Freelance</p>
+
+                    </div>
+
+                    <button class="add-category-btn">
+                        + Add more
+                    </button>
+
+                </div>
+
+
+                <!-- TRACKING -->
+
+                <div class="card tracking">
+
+                    <h3>My tracking</h3>
+
+                    <p>Create wireframe</p>
+                    <p>Design dashboard</p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
 
 </body>
 
