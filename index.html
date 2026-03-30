@@ -2,32 +2,165 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <title>To Do App</title>
+<meta charset="UTF-8">
+<title>Task Dashboard</title>
 
-    <!-- Conectar CSS -->
-    <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <h1>To Do App</h1>
+<div class="app">
 
-    <div class="container">
+    <!-- SIDEBAR -->
 
-        <div class="input-section">
-            <input type="text" id="taskInput" placeholder="Escribe una tarea...">
-            <button id="addTaskBtn">Añadir</button>
+    <aside class="sidebar">
+
+        <h2 class="logo">Organizo</h2>
+
+        <nav>
+
+            <ul>
+
+                <li class="active">Dashboard</li>
+                <li>My tasks</li>
+                <li>Notifications</li>
+
+            </ul>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <p>Settings</p>
+            <p>Log out</p>
+
         </div>
 
-        <ul id="taskList">
-            <!-- aquí aparecerán las tareas -->
-        </ul>
+    </aside>
 
-    </div>
 
-    <!-- Conectar JavaScript -->
-    <script src="js/script.js"></script>
+    <!-- MAIN CONTENT -->
+
+    <main class="main">
+
+        <!-- HEADER -->
+
+        <header class="topbar">
+
+            <input type="text" placeholder="Search">
+
+            <button class="new-task-btn">
+                + New task
+            </button>
+
+        </header>
+
+
+        <!-- DASHBOARD GRID -->
+
+        <section class="dashboard">
+
+            <!-- CALENDAR -->
+
+            <div class="card calendar">
+
+                <div class="calendar-header">
+
+                    <button id="prevMonth">◀</button>
+
+                    <h3 id="monthYear">March 2026</h3>
+
+                    <button id="nextMonth">▶</button>
+
+                </div>
+
+                <div class="weekdays">
+
+                    <div>Mo</div>
+                    <div>Tu</div>
+                    <div>We</div>
+                    <div>Th</div>
+                    <div>Fr</div>
+                    <div>Sa</div>
+                    <div>Su</div>
+
+                </div>
+
+                <div id="calendarDays">
+
+                    <!-- JS generará los días -->
+
+                </div>
+
+            </div>
+
+
+            <!-- TASK LIST -->
+
+            <div class="card tasks">
+
+                <h3>My tasks</h3>
+
+                <ul id="taskList">
+
+                    <li>
+                        Finish project
+                    </li>
+
+                    <li>
+                        Study JavaScript
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- COMMENTS -->
+
+            <div class="card comments">
+
+                <h3>New comments</h3>
+
+                <p>Market research</p>
+                <p>Check data updates</p>
+
+            </div>
+
+
+            <!-- CATEGORIES -->
+
+            <div class="card categories">
+
+                <h3>My categories</h3>
+
+                <p>Work</p>
+                <p>Family</p>
+                <p>Freelance</p>
+
+            </div>
+
+
+            <!-- TRACKING -->
+
+            <div class="card tracking">
+
+                <h3>My tracking</h3>
+
+                <p>Create wireframe</p>
+                <p>Design dashboard</p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 
