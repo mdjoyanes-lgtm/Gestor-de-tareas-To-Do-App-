@@ -2,166 +2,292 @@
 <html lang="es">
 
 <head>
-<meta charset="UTF-8">
-<title>Task Dashboard</title>
-
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Task Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<div class="app">
+    <div class="app">
 
-    <!-- SIDEBAR -->
+        <!-- SIDEBAR -->
 
-    <aside class="sidebar">
+        <aside class="sidebar">
 
-        <h2 class="logo">Organizo</h2>
+            <h2 class="logo">Organizo</h2>
 
-        <nav>
+            <nav>
 
-            <ul>
+                <div class="column">
 
-                <li class="active">Dashboard</li>
-                <li>My tasks</li>
-                <li>Notifications</li>
+                    <button class="new-task-btn1" id="boton1">Dashboard</button>
+                    <button class="new-task-btn1" id="boton2">My Tasks</button>
+                    <button class="new-task-btn1" id="boton3">Notifications</button>
 
-            </ul>
+                </div>
 
-        </nav>
+            </nav>
 
-        <div class="sidebar-bottom">
+            <div class="sidebar-bottom">
 
-            <p>Settings</p>
-            <p>Log out</p>
+                <p id="settings">Settings</p>
+                <p id="logout">Log out</p>
 
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main">
+
+            <!-- HEADER -->
+
+            <header class="topbar">
+
+                <input type="text" placeholder="Search">
+
+                <button class="new-task-btn" id="boton4">
+                    + New task
+                </button>
+
+            </header>
+
+
+            <!-- DASHBOARD GRID -->
+
+            <section class="dashboard">
+
+                <!-- CALENDAR -->
+
+                <div class="card calendar">
+
+                    <div class="calendar-header">
+
+                        <button id="btn-atras">◀</button>
+
+                        <h3 id="monthYear">March 2026</h3>
+
+                        <button id="btn-adelante">▶</button>
+
+                    </div>
+
+                    <div class="weekdays">
+
+                        <div>Mo</div>
+                        <div>Tu</div>
+                        <div>We</div>
+                        <div>Th</div>
+                        <div>Fr</div>
+                        <div>Sa</div>
+                        <div>Su</div>
+
+                    </div>
+
+                    <div id="calendarDays">
+
+                        <!-- JS generará los días -->
+
+                    </div>
+
+                </div>
+
+
+                <!-- TASK LIST -->
+
+                <div class="card tasks" id="lista-tareas">
+
+                    <h3>My tasks</h3>
+
+                    <ul id="taskList">
+
+                        <li>
+                            Finish project
+                        </li>
+
+                        <li>
+                            Study JavaScript
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- COMMENTS -->
+
+                <div class="card comments">
+
+                    <h3>New comments</h3>
+
+                    <p>Market research</p>
+                    <p>Check data updates</p>
+
+                </div>
+
+
+                <!-- CATEGORIES -->
+
+                <div class="card categories">
+
+                    <h3>My categories</h3>
+
+                    <p>Work</p>
+                    <p>Family</p>
+                    <p>Freelance</p>
+
+                </div>
+
+
+                <!-- TRACKING -->
+
+                <div class="card tracking">
+
+                    <h3>My tracking</h3>
+
+                    <p>Create wireframe</p>
+                    <p>Design dashboard</p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!------------------------------ ÁREA DE MODALES (Bootstrap) ------------------------------>
+
+
+    <!------------------------------ Modal botón 1 (Dashboard) ------------------------------>
+
+    <div class="modal" id="miVentanaModalboton1" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ya estás en tu Dashboard</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Pesiona la X para cerrar esta pestaña.</p>
+                </div>
+            </div>
         </div>
+    </div>
 
-    </aside>
+    <!------------------------------ Modal botón 2 (My Tasks) ------------------------------>
 
-
-    <!-- MAIN CONTENT -->
-
-    <main class="main">
-
-        <!-- HEADER -->
-
-        <header class="topbar">
-
-            <input type="text" placeholder="Search">
-
-            <button class="new-task-btn">
-                + New task
-            </button>
-
-        </header>
-
-
-        <!-- DASHBOARD GRID -->
-
-        <section class="dashboard">
-
-            <!-- CALENDAR -->
-
-            <div class="card calendar">
-
-                <div class="calendar-header">
-
-                    <button id="prevMonth">◀</button>
-
-                    <h3 id="monthYear">March 2026</h3>
-
-                    <button id="nextMonth">▶</button>
-
+    <div class="modal fade" id="miVentanaModalboton2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">My Tasks</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-
-                <div class="weekdays">
-
-                    <div>Mo</div>
-                    <div>Tu</div>
-                    <div>We</div>
-                    <div>Th</div>
-                    <div>Fr</div>
-                    <div>Sa</div>
-                    <div>Su</div>
-
+                <div class="modal-body">
+                    Si deseas añadir tareas presiona el botón "+ New Task"
                 </div>
-
-                <div id="calendarDays">
-
-                    <!-- JS generará los días -->
-
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 </div>
-
             </div>
+        </div>
+    </div>
 
+    <!------------------------------ Modal botón 3 (Notifications) ------------------------------>
 
-            <!-- TASK LIST -->
-
-            <div class="card tasks">
-
-                <h3>My tasks</h3>
-
-                <ul id="taskList">
-
-                    <li>
-                        Finish project
-                    </li>
-
-                    <li>
-                        Study JavaScript
-                    </li>
-
-                </ul>
-
+    <div class="modal fade" id="miVentanaModalboton3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">¡Aviso Importante!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Al presionar "+ New Tasks" puedes añadir tareas.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
             </div>
+        </div>
+    </div>
 
+    <!------------------------------- Modal botón 5 (Settings) ------------------------------->
 
-            <!-- COMMENTS -->
-
-            <div class="card comments">
-
-                <h3>New comments</h3>
-
-                <p>Market research</p>
-                <p>Check data updates</p>
-
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Settings</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5>
+                        <div class="spinner-border spinner-border-sm" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div> Sistemas
+                    </h5>
+                    <h5>
+                        <div class="spinner-border spinner-border-sm" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div> Atajos
+                    </h5>
+                    <h5>
+                        <div class="spinner-border spinner-border-sm" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div> Información
+                    </h5>
+                    <h5>
+                        <div class="spinner-border spinner-border-sm" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div> Condiciones
+                    </h5>
+                    <h5>
+                        <div class="spinner-border spinner-border-sm" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div> Ayuda
+                    </h5>
+                </div>
+                <div class="modal-footer">
+                    <label for="">¡Acceso denegado!</label>
+                    <button class="btn btn-danger" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Más
+                        información</button>
+                </div>
             </div>
-
-
-            <!-- CATEGORIES -->
-
-            <div class="card categories">
-
-                <h3>My categories</h3>
-
-                <p>Work</p>
-                <p>Family</p>
-                <p>Freelance</p>
-
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">No tienes permiso para acceder a las
+                        configuraciones</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Sólo los desarrolladores de la página pueden acceder a estas configuraciones, para más información
+                    contáctalos.
+                </div>
             </div>
+        </div>
+    </div>
+
+    <!------------------------------------------------------------------------------------------------------------------>
 
 
-            <!-- TRACKING -->
 
-            <div class="card tracking">
-
-                <h3>My tracking</h3>
-
-                <p>Create wireframe</p>
-                <p>Design dashboard</p>
-
-            </div>
-
-        </section>
-
-    </main>
-
-</div>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
